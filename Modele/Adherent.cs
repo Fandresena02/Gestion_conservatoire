@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Banque.Modele
+namespace Gestion_conservatoire.Modele
 {
     class Adherent : Personne
     {
@@ -13,6 +13,10 @@ namespace Banque.Modele
         {
             this.niveau = niveau;
         }
+        public Adherent()
+        {
+
+        }
 
         public int Niveau { get => niveau; }
 
@@ -20,6 +24,5 @@ namespace Banque.Modele
         {
             get => base.Description + " Niveau: " + this.niveau;
         }
-
     }
 }

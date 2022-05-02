@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Banque.Modele
+namespace Gestion_conservatoire.Modele
 {
     class Inscription
     {

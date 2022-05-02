@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Banque.Modele
+namespace Gestion_conservatoire.Modele
 {
     class Instrument
     {
@@ -22,7 +22,7 @@ namespace Banque.Modele
 
         public string Description
         {
-            get => this.id + "- " + this.nomInstru ;
+            get => this.id + "- " + this.nomInstru;
         }
     }
 }

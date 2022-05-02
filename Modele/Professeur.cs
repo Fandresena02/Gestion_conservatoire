@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Banque.Modele
+namespace Gestion_conservatoire.Modele
 {
-    class Professeur: Personne
+    class Professeur : Personne
     {
         double salaire;
         public Professeur(int id, string nom, string prenom, string ad, string mail, string tel, double salaire) : base(id, nom, prenom, ad, mail, tel)

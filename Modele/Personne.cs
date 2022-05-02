@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Banque.Modele
+namespace Gestion_conservatoire.Modele
 {
-   public abstract class Personne
+    public abstract class Personne
     {
         protected int id;
         protected string nom;
@@ -27,7 +27,7 @@ namespace Banque.Modele
 
         public Personne()
         {
-           
+
         }
 
         public string Nom { get => nom; }
