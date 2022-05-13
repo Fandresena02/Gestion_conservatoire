@@ -17,6 +17,7 @@ namespace Gestion_conservatoire.Modele
         {
 
         }
+        public int Num { get => id; }
 
         public int Niveau { get => niveau; }
 

@@ -10,6 +10,16 @@ namespace Gestion_conservatoire.Controleur
 {
     class Mgr
     {
-        private int test = 0;
+        AdherentDao a = new AdherentDao();
+        InscriptionDao c = new InscriptionDao();
+
+        public List<Adherent> chargementAdBD()
+        {
+            return (a.getAdherents());
+        }
+        public List<Inscription> chargemenInBD(Adherent ad)
+        {
+            return (c.getInscriptions(ad));
+        }
     }
 }

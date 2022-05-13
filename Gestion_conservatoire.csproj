@@ -51,6 +51,7 @@
     <Compile Include="DAL\AdherentDao.cs" />
     <Compile Include="DAL\ConnexionSql.cs" />
     <Compile Include="DAL\Fabrique.cs" />
+    <Compile Include="DAL\InscriptionDao.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

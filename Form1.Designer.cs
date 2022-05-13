@@ -29,44 +29,48 @@ namespace Gestion_conservatoire
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.lBox = new System.Windows.Forms.ListBox();
+            this.cBox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
-            // listBox1
+            // lBox
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 20;
-            this.listBox1.Location = new System.Drawing.Point(321, 42);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(467, 44);
-            this.listBox1.TabIndex = 0;
+            this.lBox.FormattingEnabled = true;
+            this.lBox.ItemHeight = 20;
+            this.lBox.Location = new System.Drawing.Point(659, 42);
+            this.lBox.Name = "lBox";
+            this.lBox.Size = new System.Drawing.Size(550, 264);
+            this.lBox.TabIndex = 0;
+            this.lBox.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
-            // comboBox1
+            // cBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(12, 42);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(175, 28);
-            this.comboBox1.TabIndex = 1;
+            this.cBox.Font = new System.Drawing.Font("Bookman Old Style", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cBox.FormattingEnabled = true;
+            this.cBox.Location = new System.Drawing.Point(12, 42);
+            this.cBox.Name = "cBox";
+            this.cBox.Size = new System.Drawing.Size(619, 26);
+            this.cBox.TabIndex = 1;
+            this.cBox.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // Gestion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.listBox1);
+            this.ClientSize = new System.Drawing.Size(1221, 584);
+            this.Controls.Add(this.cBox);
+            this.Controls.Add(this.lBox);
             this.Name = "Gestion";
             this.Text = "Gestion conservatoire Zik-Mu";
+            this.Load += new System.EventHandler(this.Gestion_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ListBox lBox;
+        private System.Windows.Forms.ComboBox cBox;
     }
 }
 
