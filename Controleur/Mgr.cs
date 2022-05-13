@@ -10,6 +10,6 @@ namespace Gestion_conservatoire.Controleur
 {
     class Mgr
     {
-        private int test = 1;
+        private int test = 0;
     }
 }
