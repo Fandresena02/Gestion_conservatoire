@@ -16,9 +16,9 @@ namespace Gestion_conservatoire.DAL
 
         public List<Inscription> getInscriptions(Adherent ad)
         {
+            List<Inscription> listInscription = new List<Inscription>();
             try
             {
-                List<Inscription> listInscription = new List<Inscription>();
 
                 maConnexionsql = ConnexionSql.getInstance(Fabrique.ProviderMysql, Fabrique.DataBaseMysql, Fabrique.UidMysql, Fabrique.MdpMysql);
 
@@ -57,9 +57,6 @@ namespace Gestion_conservatoire.DAL
                 reader1.Close();
                 maConnexionsql.closeConnection();
 
-
-                return listInscription;
-
             }
             catch(Exception emp)
             {
@@ -67,6 +64,7 @@ namespace Gestion_conservatoire.DAL
                 throw (emp);
 
             }
+            return listInscription;
         }
 
     }

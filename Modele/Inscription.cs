@@ -31,18 +31,14 @@ namespace Gestion_conservatoire.Modele
             this.nomInstrument = nomInstrument;
             this.payer = payer;
         }
-        public Inscription()
-        {
-
-        }
-
+       
         public Adherent UnAdherent { get => unAdherent; }
         public Cours UnCours { get => unCours; }
         public int Solde { get => solde; }
 
         public string Description
         {
-            get => this.unAdherent + " " + this.unCours + " " + this.solde;
+            get => this.nomAd + " " + this.prenomAd + " " + this.dateCours + " "+ this.nomProf + " " + this.prenomProf + " " + this.nombrePlace + " " + this.nomInstrument + " " + this.payer;
         }
     }
 }
