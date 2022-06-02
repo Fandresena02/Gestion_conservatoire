@@ -85,11 +85,13 @@ namespace Gestion_conservatoire
         private void modifierToolStripMenuItem_Click(object sender, EventArgs e)
         {
             int i = cBox.SelectedIndex;
-            Adherent a = lstAd[i];
+            Adherent a = (Adherent)lstAd[i];
 
             FormAdherent fa = new FormAdherent(a);
 
             fa.ShowDialog();
+
+            monManager.updateAdherent(a);
 
             lstAd = monManager.chargementAdBD();
 

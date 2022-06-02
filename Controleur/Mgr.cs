@@ -21,5 +21,10 @@ namespace Gestion_conservatoire.Controleur
         {
             return (c.getInscriptions(ad));
         }
+        public void updateAdherent(Adherent ad)
+        {
+            a.updateAdherent(ad);
+
+        }
     }
 }

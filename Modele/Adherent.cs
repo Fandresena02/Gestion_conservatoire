@@ -9,7 +9,7 @@ namespace Gestion_conservatoire.Modele
    public class Adherent : Personne
     {
         int niveau;
-        public Adherent(int id, string nom, string prenom, string ad, string mail, string tel, int niveau) : base(id, nom, prenom, ad, mail, tel)
+        public Adherent(int id, string nom, string prenom, string mail, string tel, string ad, int niveau) : base(id, nom, prenom, mail, tel, ad)
         {
             this.niveau = niveau;
         }

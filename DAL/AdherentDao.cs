@@ -54,7 +54,7 @@ namespace Gestion_conservatoire.DAL
                     int niveau = (int)reader1.GetValue(6);
 
 
-                    ad = new Adherent(id, nom, prenom, adresse, mail, tel, niveau);
+                    ad = new Adherent(id, nom, prenom, mail, tel, adresse, niveau);
 
 
                 }
@@ -92,7 +92,10 @@ namespace Gestion_conservatoire.DAL
 
 
 
-                Ocom = maConnexionSql.reqExec("Update personnes set adresse = '" + a.Adresse + "' where id = " + a.Id);
+                Ocom = maConnexionSql.reqExec("Update personnes set tel ='" + a.Tel + "', adresse = '" + a.Adresse + "' where id = " + a.Id);
+                Ocom.ExecuteNonQuery();
+
+                Ocom = maConnexionSql.reqExec("Update adherent set niveau ='" + a.Niveau + "' where id = " + a.Id);
                 Ocom.ExecuteNonQuery();
 
 
@@ -144,7 +147,7 @@ namespace Gestion_conservatoire.DAL
                     string mail = (string)reader.GetValue(5);
                     int niveau = (int)reader.GetValue(6);
 
-                    a = new Adherent(numero, nom, prenom, tel, adresse, mail, niveau);
+                    a = new Adherent(numero, nom, prenom, mail, tel, adresse, niveau);
 
                     lc.Add(a);
 

@@ -33,9 +33,9 @@ namespace Gestion_conservatoire
             txtNiveau.Text = a.Niveau.ToString();
             txtNom.Text = a.Nom;
             txtPrenom.Text = a.Prenom;
-            txtTel.Text = a.Tel;
-            txtMail.Text = a.Mail;
             txtAdresse.Text = a.Adresse;
+            txtMail.Text = a.Mail;
+            txtTel.Text = a.Tel;           
 
         }
 
