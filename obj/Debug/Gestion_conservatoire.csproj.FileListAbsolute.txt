@@ -46,3 +46,4 @@ C:\Users\fandr\Documents\BTS SIO\2ème année\BTS-Projet-E5\Gestion_conservatoir
 C:\Users\fandr\Documents\BTS SIO\2ème année\BTS-Projet-E5\Gestion_conservatoire\obj\Debug\Gestion_conservatoire.csproj.CopyComplete
 C:\Users\fandr\Documents\BTS SIO\2ème année\BTS-Projet-E5\Gestion_conservatoire\obj\Debug\Gestion_conservatoire.exe
 C:\Users\fandr\Documents\BTS SIO\2ème année\BTS-Projet-E5\Gestion_conservatoire\obj\Debug\Gestion_conservatoire.pdb
+C:\Users\fandr\Documents\BTS SIO\2ème année\BTS-Projet-E5\Gestion_conservatoire\obj\Debug\Gestion_conservatoire.FormAdherent.resources

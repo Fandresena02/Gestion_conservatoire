@@ -81,5 +81,19 @@ namespace Gestion_conservatoire
         {
 
         }
+
+        private void modifierToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int i = cBox.SelectedIndex;
+            Adherent a = lstAd[i];
+
+            FormAdherent fa = new FormAdherent(a);
+
+            fa.ShowDialog();
+
+            lstAd = monManager.chargementAdBD();
+
+            rafraichirComboBox(i);
+        }
     }
 }
