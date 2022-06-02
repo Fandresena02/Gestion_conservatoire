@@ -97,5 +97,25 @@ namespace Gestion_conservatoire
 
             rafraichirComboBox(i);
         }
+
+        private void supprimerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            btnSupp.Visible = true;
+        }
+
+        private void btnSupp_Click(object sender, EventArgs e)
+        {
+            int i = cBox.SelectedIndex;
+            Adherent ad = (Adherent)lstAd[i];
+
+            monManager.deleteAdherent(ad);
+
+            lstAd = monManager.chargementAdBD();
+
+            rafraichirComboBox(i);
+
+
+
+        }
     }
 }

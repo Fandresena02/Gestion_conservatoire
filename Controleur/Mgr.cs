@@ -26,5 +26,9 @@ namespace Gestion_conservatoire.Controleur
             a.updateAdherent(ad);
 
         }
+        public void deleteAdherent(Adherent ad)
+        {
+            a.deleteAdherent(ad);
+        }
     }
 }

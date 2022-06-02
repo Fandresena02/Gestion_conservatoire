@@ -108,6 +108,29 @@ namespace Gestion_conservatoire.DAL
             }
         }
 
+        public void deleteAdherent(Adherent a)
+        {
+
+            try
+            {
+
+                // à compléter
+                maConnexionSql = ConnexionSql.getInstance(Fabrique.ProviderMysql, Fabrique.DataBaseMysql, Fabrique.UidMysql, Fabrique.MdpMysql);
+
+                maConnexionSql.openConnection();
+
+                Ocom = maConnexionSql.reqExec("Delete from adherent where id = " + a.Id);
+                Ocom.ExecuteNonQuery();
+
+            }
+
+            catch (Exception emp)
+            {
+
+                throw (emp);
+            }
+        }
+
 
         public List<Adherent> getAdherents()
         {
