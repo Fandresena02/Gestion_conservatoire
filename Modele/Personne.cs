@@ -41,7 +41,7 @@ namespace Gestion_conservatoire.Modele
         public virtual string Description
         {
 
-            get => this.id + "- " + this.nom + " " + this.prenom + " " + this.mail + " " + this.tel + " " + this.adresse;
+            get => this.nom + " " + this.prenom + ", " + this.mail + ", " + this.tel + ", " + this.adresse;
         }
 
 

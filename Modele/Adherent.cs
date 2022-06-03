@@ -23,7 +23,7 @@ namespace Gestion_conservatoire.Modele
 
         public override string Description
         {
-            get => base.Description + " Niveau: " + this.niveau;
+            get => base.Description ;
         }
     }
 }

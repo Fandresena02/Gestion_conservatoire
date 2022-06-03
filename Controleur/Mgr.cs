@@ -28,7 +28,19 @@ namespace Gestion_conservatoire.Controleur
         }
         public void deleteAdherent(Adherent ad)
         {
-            a.deleteAdherent(ad);
+            try
+            {
+                a.deleteAdherent(ad);
+            }
+            catch(Exception emp)
+            {
+                throw (emp);
+            }
+            
+        }
+        public void updateSolde(Inscription uneInsc)
+        {
+            c.updateSolde(uneInsc);
         }
     }
 }

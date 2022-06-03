@@ -29,6 +29,8 @@ namespace Gestion_conservatoire
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            btnSupp.Visible = false;
+            
             int i = cBox.SelectedIndex;
 
             if (i != -1)
@@ -39,14 +41,20 @@ namespace Gestion_conservatoire
 
                 if (lstIns.Count != 0) { rafraichirListBox(0); }
 
-                else { rafraichirListBox_Comptes_Vides(); }
+                else { 
+                    rafraichirListBox_Comptes_Vides();
+                    crediterMenu.Visible = false;
+                    lblEtat.Visible = false;
+                    panel1.Visible = false;
+                    btnCredit.Visible = false;
+                    txtBoxCredit.Visible = false;
+                }
 
             }
 
         }
         private void rafraichirListBox_Comptes_Vides()
         {
-
             lBox.DataSource = null;
             lBox.DisplayMember = "Description";
         }
@@ -54,7 +62,6 @@ namespace Gestion_conservatoire
         {
 
             cBox.DataSource = null;
-            // lBox.DataSource = lstcpt.Values.ToList();
             cBox.DataSource = lstAd;
             cBox.DisplayMember = "Description";
            // cBox.SelectedItem(index, true);
@@ -79,6 +86,21 @@ namespace Gestion_conservatoire
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            crediterMenu.Visible = true;
+            lblEtat.Visible = true;
+            panel1.Visible = true;
+
+            int index = lBox.SelectedIndex;
+            if (index != -1)
+            { 
+                    Inscription uneInscription = (Inscription)lstIns[index];
+
+                if (uneInscription.check(uneInscription.Solde))
+                {
+                    panel1.BackColor = Color.Green;
+                }
+                else panel1.BackColor = Color.Red;
+            }
 
         }
 
@@ -107,14 +129,63 @@ namespace Gestion_conservatoire
         {
             int i = cBox.SelectedIndex;
             Adherent ad = (Adherent)lstAd[i];
+            DialogResult user_choix;
 
-            monManager.deleteAdherent(ad);
+            user_choix = MessageBox.Show("Voulez-vous vraiment le supprimer ?", "Suppression adherent",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 
-            lstAd = monManager.chargementAdBD();
+            if (user_choix == DialogResult.Yes)
+            { 
 
-            rafraichirComboBox(i);
+                try
+                {
+                    monManager.deleteAdherent(ad);
+
+                    lstAd = monManager.chargementAdBD();
+
+                    rafraichirComboBox(i);
+
+                }catch(Exception emp)
+                {
+                    MessageBox.Show("Attention, il existe une/des inscription(s) pour cet adhérent");
+                }
+            }
 
 
+        }
+
+        private void crediterMenu_Click(object sender, EventArgs e)
+        {
+            btnCredit.Visible = true;
+            txtBoxCredit.Visible = true;
+        }
+
+        private void btnCredit_Click(object sender, EventArgs e)
+        {
+            int i = lBox.SelectedIndex;
+
+            Inscription uneIns = (Inscription)lstIns[i];
+            try
+            {
+                uneIns.crediter(Convert.ToInt32(txtBoxCredit.Text));
+
+                monManager.updateSolde(uneIns);
+
+
+                int j = cBox.SelectedIndex;
+                Adherent a = (Adherent)lstAd[j];
+                lstIns = monManager.chargemenInBD(a);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
+            int index = lBox.SelectedIndex;
+
+            rafraichirListBox(index);
 
         }
     }

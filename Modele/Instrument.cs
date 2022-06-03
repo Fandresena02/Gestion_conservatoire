@@ -16,13 +16,17 @@ namespace Gestion_conservatoire.Modele
             this.id = id;
             this.nomInstru = nomInstru;
         }
+        public Instrument()
+        {
+
+        }
 
         public string NomInstru { get => nomInstru; }
         public int Id { get => id; }
 
         public string Description
         {
-            get => this.id + "- " + this.nomInstru;
+            get => this.nomInstru;
         }
     }
 }

@@ -11,8 +11,7 @@ namespace Gestion_conservatoire.Modele
         private Adherent unAdherent;
         private Cours unCours;
         private int solde;
-        private string nomAd, prenomAd, dateCours, nomProf, prenomProf, nomInstrument;
-        private int payer, nombrePlace;
+        private const int montant = 500;
 
         public Inscription(Adherent unAdherent, Cours unCours, int solde)
         {
@@ -20,25 +19,34 @@ namespace Gestion_conservatoire.Modele
             this.unCours = unCours;
             this.solde = solde;
         }
-        public Inscription(string nomAd, string prenomAd,string  dateCours,string nomProf,string prenomProf,int nombrePlace,string nomInstrument, int payer)
-        {
-            this.nomAd = nomAd;
-            this.prenomAd = prenomAd;
-            this.dateCours = dateCours;
-            this.nomProf = nomProf;
-            this.prenomProf = prenomProf;
-            this.nombrePlace = nombrePlace;
-            this.nomInstrument = nomInstrument;
-            this.payer = payer;
-        }
        
         public Adherent UnAdherent { get => unAdherent; }
         public Cours UnCours { get => unCours; }
-        public int Solde { get => solde; }
+        public int Solde { get => solde; set => solde = value; }
 
         public string Description
         {
-            get => this.nomAd + " " + this.prenomAd + " " + this.dateCours + " "+ this.nomProf + " " + this.prenomProf + " " + this.nombrePlace + " " + this.nomInstrument + " " + this.payer;
+            get => this.unCours.Description + " " + this.solde +"/" + montant;
+        }
+        public void crediter(int mont)
+        {
+            if (solde + mont > montant)
+            {
+                throw new Exception("Montant dépassé");
+            }
+            else
+            {
+                solde = solde + mont;
+
+            }
+        }
+        public Boolean check(int mont)
+        {
+            if (mont < montant)
+            {
+                return false;
+            }
+            else return true;
         }
     }
 }

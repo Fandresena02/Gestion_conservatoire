@@ -84,8 +84,6 @@ namespace Gestion_conservatoire.DAL
             try
             {
 
-
-                // à compléter
                 maConnexionSql = ConnexionSql.getInstance(Fabrique.ProviderMysql, Fabrique.DataBaseMysql, Fabrique.UidMysql, Fabrique.MdpMysql);
 
                 maConnexionSql.openConnection();
